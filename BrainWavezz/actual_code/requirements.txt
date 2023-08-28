@@ -1,0 +1,2 @@
+langchain==0.0.154
+PyPDF2==3.0.1

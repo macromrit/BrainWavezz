@@ -1,0 +1,46 @@
+what's happening???
+
+process 1: text is extracted from pdfs.
+
+process 2: mutiple pdfs of specified subjects are combined after the read.
+
+process 3: previous process generates text content from pdfs.
+	   Those are splitted on token consumption basis (1000 for now),
+	   Overlaps are added between splitted chunks for efficent connection while search.
+
+process 4: OpenAIEmbeddings are intantiated as it serves as embedding base for vectorizing text chunks.
+	   vectorized text chunks are stored in a pickle(binary) file. 
+	   Then it may be loaded to upload data on llms.
+	   [ on a whole vectore stores are generated here ].
+
+process 5: function takes in query(i.e the question) and VectorStore on which llm must be trained,
+	   reponse for query is return with being stripped and \n's replaced with " ".
+
+process 6: questions generated must be written onto a text file, as these would be used to let models know
+	   that questions of their type with ditto data musn't be generated.
+
+process 7: a general template for question generation is registered. multiple function abv will be passed
+	   to run and generate question(s) our preferred output.
+
+process 8: main function to combine all the abv and generate actual set of questions
+	   
+
+
+question layout for grade 11 JEE based queries :
+
+	Sets
+	Relations and Functions
+	Trignometric Functions
+	Principle of Mathematical Induction
+	Complex Numbers anad Quadratic Equations
+	Linear Inequalities
+	Permutations and Combinations
+	Binomial Theorem
+	Sequence and Series
+	Straight Lines
+	Conic Sections
+	Introduction to Three dimensional Geometry
+	Limits and Derivatives
+	Mathematical Reasoning
+	Statistics
+	Probability
